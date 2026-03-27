@@ -17,4 +17,4 @@ jobs:
 
       - name: Ejecutar Pruebas (CI)
         run: |
-          python test_app.py  # Aquí es donde ocurre la validación automática
+          python test_app.py
