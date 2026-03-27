@@ -1,0 +1,20 @@
+name: Mi Pipeline de DevOps  # Nombre que aparecerá en GitHub
+
+on: [push]  # "Disparador": El pipeline corre cada vez que hagas un Push
+
+jobs:
+  build-and-test:  # Nombre del trabajo
+    runs-on: ubuntu-latest  # Le pedimos a GitHub una computadora con Linux
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v3  # El robot descarga tu código para revisarlo
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # Instalamos la versión de Python que necesitemos
+
+      - name: Ejecutar Pruebas (CI)
+        run: |
+          python test_app.py  # Aquí es donde ocurre la validación automática
